@@ -81,7 +81,7 @@ class Board extends React.Component {
             imageSource = PolarBear;
         }
 
-        return<img className="status-image" src={imageSource} alt={player} />
+        return <img className="status-image" src={imageSource} alt={player} />
     }
 
     resetGame() {
@@ -135,7 +135,11 @@ class Board extends React.Component {
                     </Button>
                     <br />
                     <br />
-                    Graphics by: <Link target="_blank">Jeanette Ngo</Link>
+                    Graphics by: <Link
+                        target="_blank"
+                        href="https://linkedin.com/in/jeanette-ngo/">
+                        Jeanette Ngo
+                        </Link>
                 </div>
             </div>
         );
