@@ -5,6 +5,11 @@ import Penguin from '../images/penguin.png';
 import PolarBear from '../images/polar_bear.PNG';
 import './Game.css';
 
+const xoMapping = {
+    'X': Penguin,
+    'O': PolarBear,
+};
+
 function calculateWinner(squares) {
     const lines = [
         [0, 1, 2],
@@ -29,14 +34,14 @@ function Square(props) {
     if (props.value === 'X') {
         return (
             <button className="square" onClick={props.onClick}>
-                <img className="square-image" src={Penguin} alt={props.value}></img>
+                <img className="square-image" src={Penguin} alt={props.value} />
             </button>
         );
 
     } else if (props.value === 'O') {
         return (
             <button className="square" onClick={props.onClick}>
-                <img className="square-image" src={PolarBear} alt={props.value}></img>
+                <img className="square-image" src={PolarBear} alt={props.value} />
             </button>
         );
     }
@@ -72,6 +77,10 @@ class Board extends React.Component {
         return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
     }
 
+    renderStatusImage(player) {
+        return<img className="status-image" src={xoMapping[player]} />
+    }
+
     resetGame() {
         this.setState({
             squares: Array(9).fill(null),
@@ -83,16 +92,22 @@ class Board extends React.Component {
         const winner = calculateWinner(this.state.squares);
 
         let status;
+        let player;
+
         if (winner) {
-            status = 'Winner: ' + winner;
+            status = 'Winner: ';
+            player = winner;
+
         } else {
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+            status = 'Next player: ';
+            player = this.state.xIsNext ? 'X' : 'O';
         }
 
         return (
             <div>
                 <div className="status">
-                    {status}
+                    <span className="status-text">{status}</span>
+                    {this.renderStatusImage(player)}
                 </div>
                 <br />
                 <div className="board-row">
