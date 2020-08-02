@@ -1,15 +1,12 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
-import Blank from '../images/blank.png'
 import Penguin from '../images/penguin.png';
 import PolarBear from '../images/polar_bear.png';
+import BlankTile from '../images/blank_tile.png'
+import PenguinTile from '../images/penguin_tile.png';
+import PolarBearTile from '../images/polar_bear_tile.png';
 import './Game.css';
-
-const xoMapping = {
-    'X': Penguin,
-    'O': PolarBear,
-};
 
 function calculateWinner(squares) {
     const lines = [
@@ -34,13 +31,13 @@ function calculateWinner(squares) {
 function Square(props) {
     let imageSource;
     if (props.value === 'X') {
-        imageSource = Penguin;
+        imageSource = PenguinTile;
 
     } else if (props.value === 'O') {
-        imageSource = PolarBear;
+        imageSource = PolarBearTile;
 
     } else {
-        imageSource = Blank;
+        imageSource = BlankTile;
     }
 
     return (
@@ -77,7 +74,14 @@ class Board extends React.Component {
     }
 
     renderStatusImage(player) {
-        return<img className="status-image" src={xoMapping[player]} alt={player} />
+        let imageSource;
+        if (player === 'X') {
+            imageSource = Penguin;
+        } else if (player === 'O') {
+            imageSource = PolarBear;
+        }
+
+        return<img className="status-image" src={imageSource} alt={player} />
     }
 
     resetGame() {
