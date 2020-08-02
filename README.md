@@ -2,4 +2,4 @@
 
 [Click here to play](https://ngojunhaojason.github.io/tic-tac-toe)
 
-![Penguin](src/images/penguin.png)
+![PenguinTile](src/images/penguin_tile.png)
