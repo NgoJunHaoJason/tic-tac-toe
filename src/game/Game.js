@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
+import Blank from '../images/blank.png'
 import Penguin from '../images/penguin.png';
-import PolarBear from '../images/polar_bear.PNG';
+import PolarBear from '../images/polar_bear.png';
 import './Game.css';
 
 const xoMapping = {
@@ -31,23 +32,21 @@ function calculateWinner(squares) {
 }
 
 function Square(props) {
+    let imageSource;
     if (props.value === 'X') {
-        return (
-            <button className="square" onClick={props.onClick}>
-                <img className="square-image" src={Penguin} alt={props.value} />
-            </button>
-        );
+        imageSource = Penguin;
 
     } else if (props.value === 'O') {
-        return (
-            <button className="square" onClick={props.onClick}>
-                <img className="square-image" src={PolarBear} alt={props.value} />
-            </button>
-        );
+        imageSource = PolarBear;
+
+    } else {
+        imageSource = Blank;
     }
 
     return (
-        <button className="square" onClick={props.onClick} />
+        <button className="square" onClick={props.onClick}>
+            <img className="square-image" src={imageSource} alt={props.value} />
+        </button>
     );
 }
 

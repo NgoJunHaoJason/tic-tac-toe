@@ -35,8 +35,8 @@ body {
 }
   
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: white;
+  border: 1px solid white;
   float: left;
   line-height: 34px;
   margin-right: -1px;
