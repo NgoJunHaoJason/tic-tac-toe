@@ -78,7 +78,7 @@ class Board extends React.Component {
     }
 
     renderStatusImage(player) {
-        return<img className="status-image" src={xoMapping[player]} />
+        return<img className="status-image" src={xoMapping[player]} alt={player} />
     }
 
     resetGame() {
