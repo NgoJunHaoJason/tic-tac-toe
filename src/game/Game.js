@@ -132,7 +132,7 @@ class Board extends React.Component {
                     </Button>
                     <br />
                     <br />
-                    Graphics by: <Link target="_blank">Ngo Li Ning Jeanette</Link>
+                    Graphics by: <Link target="_blank">Jeanette Ngo</Link>
                 </div>
             </div>
         );
