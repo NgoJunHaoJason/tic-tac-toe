@@ -11,7 +11,7 @@ body {
 .game-board {
   margin-left: auto;
   margin-right: auto;
-  width: 360px;
+  width: 300px;
 }
   
 .board-row:after {
@@ -38,15 +38,13 @@ body {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
-  font-weight: bold;
   line-height: 34px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
 }
 
 .square:focus {
@@ -58,8 +56,8 @@ body {
 }
 
 .square-image {
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
 }
 
 .bottom-text {
